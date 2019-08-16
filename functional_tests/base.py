@@ -18,7 +18,15 @@ class FunctionalTest(StaticLiveServerTestCase):
         cls.server_url = cls.live_server_url
 
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        # self.browser = webdriver.Chrome(
+            # "C:/dev/works/django/TDD-with-python2/tdd-with-python-1/utils/chromedriver_win32/chromedriver.exe"
+        # )
+        # fp = webdriver.FirefoxProfile
+        executable_path = "C:/dev/works/django/TDD-with-python2/tdd-with-python-1/utils/geckodriver-v0.24.0-win64/geckodriver.exe"
+        # options = webdriver.FirefoxOptions()
+        # options.add_argument('--headless')        
+        self.browser = webdriver.Firefox(executable_path=executable_path)
+        # self.browser = webdriver.Firefox(executable_path=executable_path)
         self.browser.implicitly_wait(3)
 
     def tearDown(self):

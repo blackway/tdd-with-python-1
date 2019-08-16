@@ -7,6 +7,8 @@ class NewVisitorTest(FunctionalTest):
 
     def test_can_start_a_list_and_retrieve_it_later(self):
 
+        self.executable_path_firefox = "C:/dev/works/django/TDD-with-python2/tdd-with-python-1/utils/geckodriver-v0.24.0-win64/geckodriver.exe"
+
         # Edith has heard about a cool new online to-do app.
         # She goes to check out its hompage.
         self.browser.get(self.server_url)
@@ -51,7 +53,7 @@ class NewVisitorTest(FunctionalTest):
         ## We use a new browser session to make sure that no information
         ## of Edith's is comming through from cookies etc.
         self.browser.quit()
-        self.browser = webdriver.Firefox()
+        self.browser = webdriver.Firefox(executable_path=self.executable_path_firefox)
 
         # Francis visits the home page. There is no sign of Edith's list.
         self.browser.get(self.server_url)
