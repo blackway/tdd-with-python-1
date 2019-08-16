@@ -25,9 +25,11 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '6(rski&ca3rq*145qwx-e#*@cp2^9!2ox9c@^gc^i@u%*puo!h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['tdd-book.herokuapp.com']
+# DEBUG = False
+# ALLOWED_HOSTS = ['tdd-book.herokuapp.com']
 
 # Application definition
 
@@ -78,7 +80,8 @@ WSGI_APPLICATION = 'superlists.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../database/db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, './db.sqlite3'),
+        # 'NAME': os.path.join(BASE_DIR, '../database/db.sqlite3'),
     }
 }
 
